@@ -476,6 +476,16 @@
       font-size: 12px;
     }
 
+    /* LANGUAGE TOGGLE */
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .lang-toggle { display: flex; align-items: center; border: 1px solid rgba(196,98,45,0.3); overflow: hidden; border-radius: 4px; }
+    .lang-btn { background: transparent; border: none; color: var(--warm-gray); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.9rem; cursor: pointer; transition: all 0.25s; }
+    .lang-btn.active { background: var(--terra); color: white; }
+    .lang-btn:hover:not(.active) { color: var(--terra-light); }
+
+    /* RTL support */
+    html[dir="rtl"] body { direction: rtl; }
+
     @media (max-width: 640px) {
       .header { padding: 16px 20px; }
       .hero { padding: 80px 20px; }
@@ -492,30 +502,34 @@
       <div class="logo-dot">W</div>
       <span class="logo-name">Web Vanguard</span>
     </div>
-    <div class="header-badge">Propuesta Exclusiva</div>
+    <div class="header-right">
+      <div class="header-badge" data-en="Exclusive Proposal" data-ar="عرض حصري">Exclusive Proposal</div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">AR</button>
+      </div>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-eyebrow">
       <span></span>
-      Specialty Coffee · Dubai Design District · 22 marzo 2026
+      <span data-en="Specialty Coffee · Dubai Design District · March 2026" data-ar="قهوة متخصصة · دبي ديزاين ديستريكت · مارس 2026">Specialty Coffee · Dubai Design District · March 2026</span>
     </div>
     <h1 class="hero-title">
       Qahwa<br /><em>House</em>
     </h1>
-    <p class="hero-tagline">
-      Tu presencia digital merece el mismo cuidado que cada taza que sirves.
-    </p>
+    <p class="hero-tagline" data-en="Your digital presence deserves the same care as every cup you serve." data-ar="حضورك الرقمي يستحق نفس الاهتمام الذي تمنحه لكل فنجان تقدمه.">Your digital presence deserves the same care as every cup you serve.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <span class="hero-meta-val">AED 4,500</span>
-        <div class="hero-meta-label">Plan Growth</div>
+        <div class="hero-meta-label" data-en="Growth Plan" data-ar="خطة النمو">Growth Plan</div>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-meta-item">
-        <span class="hero-meta-val">7 días</span>
-        <div class="hero-meta-label">Entrega</div>
+        <span class="hero-meta-val" data-en="7 days" data-ar="7 أيام">7 days</span>
+        <div class="hero-meta-label" data-en="Delivery" data-ar="التسليم">Delivery</div>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-meta-item">
@@ -524,7 +538,7 @@
       </div>
     </div>
     <div class="plan-badge">Plan Growth — AED 4,500</div>
-    <p class="plan-sub">Precio fijo. Sin sorpresas. Incluye todo lo de abajo.</p>
+    <p class="plan-sub" data-en="Fixed price. No surprises. Everything included below." data-ar="سعر ثابت. لا مفاجآت. كل شيء مشمول أدناه.">Fixed price. No surprises. Everything included below.</p>
   </section>
 
   <hr class="divider" />
@@ -689,8 +703,27 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 Web Vanguard — Dubai's AI-Powered Web Design Agency · webvanguardai.github.io</p>
+    <p data-en="© 2026 Web Vanguard — Dubai's AI-Powered Web Design Agency · webvanguardai.github.io" data-ar="© 2026 Web Vanguard — وكالة تصميم مواقع دبي بالذكاء الاصطناعي · webvanguardai.github.io">© 2026 Web Vanguard — Dubai's AI-Powered Web Design Agency · webvanguardai.github.io</p>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      const html = document.documentElement;
+      html.lang = lang;
+      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.innerHTML = text;
+      });
+      localStorage.setItem('wv-lang', lang);
+    }
+    (function() {
+      const saved = localStorage.getItem('wv-lang');
+      if (saved === 'ar') setLang('ar');
+    })();
+  </script>
 
 </body>
 </html>
