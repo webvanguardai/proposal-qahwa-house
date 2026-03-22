@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Vanguard — Propuesta para Qahwa House</title>
+  <meta name="description" content="Propuesta exclusiva de Web Vanguard para Qahwa House — Specialty Coffee Roastery Dubai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terra: #C4622D;
+      --terra-light: #D4784A;
+      --cream: #FAF7F2;
+      --charcoal: #2C2416;
+      --dark: #0F0B07;
+      --dark-mid: #1A160E;
+      --dark-card: #1E1910;
+      --sand: #D4B896;
+      --warm-gray: #8A7E72;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--terra); color: white; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Header ── */
+    .header {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(196,98,45,0.15);
+      position: sticky;
+      top: 0;
+      background: rgba(15,11,7,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-dot {
+      width: 32px;
+      height: 32px;
+      background: var(--terra);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: white;
+    }
+
+    .logo-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .header-badge {
+      background: rgba(196,98,45,0.1);
+      border: 1px solid rgba(196,98,45,0.3);
+      color: var(--terra-light);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,98,45,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(196,98,45,0.08);
+      border: 1px solid rgba(196,98,45,0.2);
+      color: var(--terra-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 40px;
+    }
+
+    .hero-eyebrow span { width: 6px; height: 6px; background: var(--terra); border-radius: 50%; }
+
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .hero-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .hero-tagline {
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--warm-gray);
+      margin-bottom: 48px;
+      max-width: 600px;
+      font-weight: 300;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .hero-meta-item {
+      text-align: center;
+    }
+
+    .hero-meta-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--terra);
+      display: block;
+    }
+
+    .hero-meta-label {
+      font-size: 11px;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 2px;
+    }
+
+    .hero-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(196,98,45,0.2);
+    }
+
+    .plan-badge {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      padding: 16px 40px;
+      border-radius: 100px;
+      letter-spacing: -0.02em;
+    }
+
+    .plan-sub {
+      color: var(--warm-gray);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
+
+    .section-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .section-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .section-desc {
+      color: var(--warm-gray);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 680px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(196,98,45,0.12);
+    }
+
+    /* ── Page sections grid ── */
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .page-card {
+      background: var(--dark-card);
+      border: 1px solid rgba(196,98,45,0.1);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .page-card:hover {
+      border-color: rgba(196,98,45,0.35);
+      transform: translateY(-2px);
+    }
+
+    .page-card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .page-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .page-card-desc {
+      color: var(--warm-gray);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ── Features ── */
+    .features-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--dark-card);
+      border: 1px solid rgba(196,98,45,0.08);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--sand);
+    }
+
+    .features-list li span:first-child {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ── Pricing ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .price-card {
+      background: var(--dark-card);
+      border: 1px solid rgba(196,98,45,0.1);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .price-card.featured {
+      background: var(--terra);
+      border-color: var(--terra);
+      transform: scale(1.04);
+    }
+
+    .price-card.featured .price-tier,
+    .price-card.featured .price-val,
+    .price-card.featured .price-desc,
+    .price-card.featured .price-features li {
+      color: white;
+    }
+
+    .best-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--charcoal);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .price-tier {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--warm-gray);
+      margin-bottom: 12px;
+    }
+
+    .price-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--terra-light);
+      margin-bottom: 4px;
+    }
+
+    .price-card.featured .price-val { color: white; }
+
+    .price-currency {
+      font-size: 16px;
+      vertical-align: top;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    .price-period {
+      font-size: 12px;
+      color: var(--warm-gray);
+      margin-bottom: 16px;
+    }
+
+    .price-card.featured .price-period { color: rgba(255,255,255,0.7); }
+
+    .price-desc {
+      font-size: 12px;
+      color: var(--warm-gray);
+      line-height: 1.5;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      text-align: center;
+      padding: 80px 40px;
+      border-top: 1px solid rgba(196,98,45,0.12);
+    }
+
+    .cta-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .cta-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .cta-sub {
+      color: var(--warm-gray);
+      font-size: 15px;
+      margin-bottom: 48px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 32px;
+      border-radius: 100px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover { background: #1eb355; transform: scale(1.05); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--cream);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 32px;
+      border-radius: 100px;
+      border: 2px solid rgba(196,98,45,0.4);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover { border-color: var(--terra); color: var(--terra-light); }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid rgba(196,98,45,0.1);
+      color: var(--warm-gray);
+      font-size: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .header { padding: 16px 20px; }
+      .hero { padding: 80px 20px; }
+      .section { padding: 60px 20px; }
+      .hero-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-dot">W</div>
+      <span class="logo-name">Web Vanguard</span>
+    </div>
+    <div class="header-badge">Propuesta Exclusiva</div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span></span>
+      Specialty Coffee · Dubai Design District · 22 marzo 2026
+    </div>
+    <h1 class="hero-title">
+      Qahwa<br /><em>House</em>
+    </h1>
+    <p class="hero-tagline">
+      Tu presencia digital merece el mismo cuidado que cada taza que sirves.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">AED 4,500</span>
+        <div class="hero-meta-label">Plan Growth</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">7 días</span>
+        <div class="hero-meta-label">Entrega</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">100%</span>
+        <div class="hero-meta-label">Custom</div>
+      </div>
+    </div>
+    <div class="plan-badge">Plan Growth — AED 4,500</div>
+    <p class="plan-sub">Precio fijo. Sin sorpresas. Incluye todo lo de abajo.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 01 — La Web -->
+  <div class="section">
+    <div class="section-number">01 — La Web</div>
+    <h2 class="section-title">Una web que<br /><em>vende sin vender.</em></h2>
+    <p class="section-desc">
+      Diseñada específicamente para Qahwa House: estética warm-minimalist en crema, terracota y carbón.
+      Completamente diferente a cualquier café en Dubai. Cada sección cuenta vuestra historia de forma
+      que el visitante quiera estar ahí antes de llegar.
+    </p>
+    <div class="pages-grid">
+      <div class="page-card">
+        <div class="page-card-icon">⚡</div>
+        <div class="page-card-title">Hero Inmersivo</div>
+        <div class="page-card-desc">Imagen de portada con parallax, headline impactante, stats y CTAs directos a menú y reservas.</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">☕</div>
+        <div class="page-card-title">Menú Interactivo</div>
+        <div class="page-card-desc">4 categorías con tabs animados: Espresso, Pour Over, Cold &amp; Seasonal, y Kitchen. Precios en AED.</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">🌱</div>
+        <div class="page-card-title">Nuestra Historia</div>
+        <div class="page-card-desc">Storytelling de Layla y Omar, los fundadores. Con valores visuales (Direct Trade, Small Batch, WBC).</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">📸</div>
+        <div class="page-card-title">Galería Visual</div>
+        <div class="page-card-desc">Grid asimétrico de 5 imágenes del espacio, café y preparaciones. Efecto hover suave.</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">💬</div>
+        <div class="page-card-title">Testimonios</div>
+        <div class="page-card-desc">4 reviews auténticos de clientes del distrito creativo de Dubai. Construyen confianza instantánea.</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">📍</div>
+        <div class="page-card-title">Contacto &amp; Reservas</div>
+        <div class="page-card-desc">Formulario con tipos (mesa, evento, wholesale, tour), mapa embebido y toda la info del local.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 02 — Features -->
+  <div class="section">
+    <div class="section-number">02 — Features Incluidas</div>
+    <h2 class="section-title">Todo lo que<br /><em>necesitas.</em></h2>
+    <p class="section-desc">Sin extras ocultos. Esto es lo que recibes en el Plan Growth.</p>
+    <ul class="features-list">
+      <li><span>🚀</span><span>Next.js 14 + TypeScript — velocidad máxima</span></li>
+      <li><span>🎨</span><span>Diseño 100% custom con identidad propia</span></li>
+      <li><span>✨</span><span>Animaciones Framer Motion profesionales</span></li>
+      <li><span>📱</span><span>100% responsive — mobile first</span></li>
+      <li><span>🔍</span><span>SEO completo — title, meta, OG, JSON-LD</span></li>
+      <li><span>📊</span><span>Google Analytics 4 integrado</span></li>
+      <li><span>💬</span><span>Botón WhatsApp flotante siempre visible</span></li>
+      <li><span>📝</span><span>Formulario Formspree (cero backend)</span></li>
+      <li><span>🗺️</span><span>Sitemap.xml + robots.txt + llms.txt</span></li>
+      <li><span>🖼️</span><span>Imágenes Unsplash verificadas y optimizadas</span></li>
+      <li><span>⚡</span><span>Deploy en Vercel CDN global (UAE edge)</span></li>
+      <li><span>🔗</span><span>Dominio custom (.ae) configurable</span></li>
+      <li><span>📦</span><span>Código en GitHub — tuyo para siempre</span></li>
+      <li><span>🏪</span><span>Schema.org CafeOrCoffeeShop (Rich Results)</span></li>
+      <li><span>🌙</span><span>Favicon SVG con identidad de marca</span></li>
+      <li><span>🔒</span><span>HTTPS, SSL, headers de seguridad</span></li>
+    </ul>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 03 — Estilo Visual -->
+  <div class="section">
+    <div class="section-number">03 — Identidad Visual</div>
+    <h2 class="section-title">Warm minimalist.<br /><em>Único en Dubai.</em></h2>
+    <p class="section-desc">
+      Mientras otras cafeterías usan negro y neón, Qahwa House tiene personalidad propia:
+      crema cálida, terracota árabe y carbón oscuro. Tipografía Space Grotesk para tech,
+      Playfair Display para alma. El resultado: sofisticado pero accesible, artesanal pero moderno.
+    </p>
+    <div class="pages-grid">
+      <div class="page-card">
+        <div style="display:flex; gap:8px; margin-bottom:12px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:#FAF7F2;border:1px solid rgba(196,98,45,0.3)"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:#C4622D"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:#2C2416"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:#D4B896"></div>
+        </div>
+        <div class="page-card-title">Paleta Terracota</div>
+        <div class="page-card-desc">Cream #FAF7F2 · Terracotta #C4622D · Charcoal #2C2416 · Sand #D4B896</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">🔡</div>
+        <div class="page-card-title">Tipografía Dual</div>
+        <div class="page-card-desc">Space Grotesk (geometric) para headings. Playfair Display (serif) para momentos emocionales.</div>
+      </div>
+      <div class="page-card">
+        <div class="page-card-icon">🏗️</div>
+        <div class="page-card-title">Layout Moderno</div>
+        <div class="page-card-desc">Alternancia luz/sombra entre secciones. Grid asimétrico en galería. Rounded corners en todo.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 04 — Pricing -->
+  <div class="section">
+    <div class="section-number">04 — Precios</div>
+    <h2 class="section-title">Transparencia<br /><em>total.</em></h2>
+    <p class="section-desc">Escoge el plan que mejor encaje con tu momento actual. Sin contratos anuales.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-val"><span class="price-currency">AED</span> 1,500</div>
+        <div class="price-period">pago único</div>
+        <div class="price-desc">Web de una página, diseño plantilla, responsive, formulario básico.</div>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Launch</div>
+        <div class="price-val"><span class="price-currency">AED</span> 2,500</div>
+        <div class="price-period">pago único</div>
+        <div class="price-desc">Diseño custom, 3–4 secciones, SEO básico, WhatsApp y galería.</div>
+      </div>
+      <div class="price-card featured">
+        <div class="best-badge">✦ Recomendado</div>
+        <div class="price-tier" style="color:rgba(255,255,255,0.7)">Growth</div>
+        <div class="price-val" style="color:white"><span class="price-currency">AED</span> 4,500</div>
+        <div class="price-period" style="color:rgba(255,255,255,0.6)">pago único</div>
+        <div class="price-desc" style="color:rgba(255,255,255,0.85)">Web completa, animaciones, SEO avanzado, JSON-LD, GA4, propuesta incluida.</div>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Premium</div>
+        <div class="price-val"><span class="price-currency">AED</span> 8,000+</div>
+        <div class="price-period">desde</div>
+        <div class="price-desc">Multi-página, CMS, booking system, ecommerce beans, soporte 6 meses.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2 class="cta-title">¿Listo para tu<br /><em>próximo capítulo?</em></h2>
+    <p class="cta-sub">La demo ya está live. Cerramos en 48h o el precio sube.</p>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="https://wa.me/34600000000?text=Hola%20Web%20Vanguard!%20Vi%20la%20propuesta%20para%20Qahwa%20House%20y%20me%20interesa.">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Habla con nosotros
+      </a>
+      <a class="btn-secondary" href="https://qahwa-house.vercel.app" target="_blank">
+        Ver Demo Live →
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Web Vanguard — Dubai's AI-Powered Web Design Agency · webvanguardai.github.io</p>
+  </footer>
+
+</body>
+</html>
